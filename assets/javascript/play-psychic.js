@@ -1,93 +1,41 @@
-var guesses=[];
-var reset=false;
 
+var guesses=[];
+var guessedLetter=[];
+var reset=false;
+var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 //listen for event onkeydown
 window.onkeydown = function(event) {
-	// TODO: When the game is over, set reset=true
-	if (reset) {
-		guesses = []
 
-		reset = false;
-	}
-    else {
-    	// Check if usersChoice already exists in guesses...
-    	// Hint: indexOf
-	 	guesses.push(usersChoice);
-		console.log(guesses);
-		
-		//possible user choices
-		var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+	//force possible user choice to lowercase
+    	var usersChoice = event.key.toLowerCase();
 
-		//force pssible user choice to lowercase
-		var usersChoice = event.key.toLowerCase();
+    	//first conditional check to see if user already choose from possible choices
+		if(guesses.indexOf(usersChoice) > -1) {
 
+			console.log("pressed more than once");
 
-		//first conditional check to see if user choose from possible choices
-		if(choices.indexOf(usersChoice) > -1) {
+		}
+	 	else {
 
-			//generate a random letter
+	 		guesses.push(usersChoice);
+	 		console.log("first press");
+
+		 	//generate a random letter
 			var computersChoice = Math.floor(Math.random() * choices.length);
+
+			//display users guess
+			var userGuess = document.getElementById("user-guess");
+
+			document.onkeyup = function() {
+			userGuess.textContent = guesses;
+			}
 
 			if(usersChoice !== computersChoice) {
 
-				//display users guess
-				var userGuess = document.getElementById("user-guess");
-
-				// document.onkeyup = function() {
-				// 	userGuess.textContent = guesses;
-				// }
-
 
 			}
-
-
-		}
-	}
+	 	}
+	 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}

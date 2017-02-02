@@ -1,0 +1,56 @@
+
+p {
+	text-align: center;
+	font-size: 20px;
+}
+
+#footer {
+	border-top: 2px solid black;
+	padding-top: 15px;
+}
+
+#gameWrap {
+	border: 2px dotted black;
+	margin: 30px 0 30px 0;
+	padding-bottom: 20px;
+}
+
+h1 {
+
+	text-align: center;
+	color: orange;
+	border-bottom: 2px solid black;
+	padding-bottom: 15px;
+    -webkit-animation: color-change 1s infinite;
+    -moz-animation: color-change 1s infinite;
+    -o-animation: color-change 1s infinite;
+    -ms-animation: color-change 1s infinite;
+    animation: color-change 1s infinite;
+}
+
+@-webkit-keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+@-moz-keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+
+@-ms-keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+@-o-keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
+@keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+}
